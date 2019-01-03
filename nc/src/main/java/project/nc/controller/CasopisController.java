@@ -18,9 +18,13 @@ import project.nc.service.PorudzbinaService;
 
 @RestController
 @RequestMapping("/casopis")
-@CrossOrigin(origins = "http://localhost:4201")
+@CrossOrigin(origins = "https://localhost:4201")
 public class CasopisController {
 
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
 	@Autowired
 	PorudzbinaService ps;
 	
@@ -32,11 +36,11 @@ public class CasopisController {
 	@GetMapping("/sacuvajPorudzbinu/{id}")
 	public String sacuvajPorudzbinu(@PathVariable("id") Long id) {
 		Porudzbina porudzbina = ps.sacuvajPorudzbinu(id);
-		final String putanja = "http://localhost:9091/placanje/sacuvajPorudzbinu";
-		RestTemplate restTemplate = new RestTemplate();
+		final String putanja = "https://localhost:9091/placanje/sacuvajPorudzbinu";
 		String url = restTemplate.postForObject(putanja, porudzbina, String.class);
 		return "{\"url\":\""+ url + "\"}";
 	}
+	
 	
 	@GetMapping("/getAllCasopisi")
 	@ResponseBody

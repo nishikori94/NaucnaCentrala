@@ -13,5 +13,5 @@ insert into Racun(broj_racuna, casopis_id, banka_id) values ('909211111111111111
 insert into Racun(broj_racuna, casopis_id, banka_id) values ('909222222222222222', 2, 1);
 insert into Racun(broj_racuna, casopis_id, banka_id) values ('909211011111111111', 3, 1);
 insert into Racun(broj_racuna, casopis_id, banka_id) values ('909222220222222222', 4, 1);
-insert into Racun(broj_racuna, casopis_id, banka_id) values ('909310111111111111', 5, 1);
+insert into Racun(broj_racuna, casopis_id, banka_id) values ('909310111111111111', 5, 2);
 insert into Racun(broj_racuna, casopis_id, banka_id) values ('909222222222220222', 6, 1);
