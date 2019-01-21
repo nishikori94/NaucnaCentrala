@@ -1,5 +1,7 @@
 package project.nc.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,14 +27,14 @@ public class Porudzbina {
 	private String valuta;
 
 	@Column
-	private String merchantTimestamp;
+	private Date merchantTimestamp;
 
 	public Porudzbina() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Porudzbina(String merchantId, String merchantPassword, String amount, String merchantTimestamp,
+	public Porudzbina(String merchantId, String merchantPassword, String amount, Date merchantTimestamp,
 			String valuta) {
 		super();
 		this.merchantId = merchantId;
@@ -74,11 +76,11 @@ public class Porudzbina {
 		this.amount = amount;
 	}
 
-	public String getMerchantTimestamp() {
+	public Date getMerchantTimestamp() {
 		return merchantTimestamp;
 	}
 
-	public void setMerchantTimestamp(String merchantTimestamp) {
+	public void setMerchantTimestamp(Date merchantTimestamp) {
 		this.merchantTimestamp = merchantTimestamp;
 	}
 

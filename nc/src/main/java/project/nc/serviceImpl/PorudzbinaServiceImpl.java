@@ -1,6 +1,5 @@
 package project.nc.serviceImpl;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 
@@ -27,8 +26,8 @@ public class PorudzbinaServiceImpl implements PorudzbinaService {
 		// TODO Auto-generated method stub
 		Optional<Casopis> casopisOpt = casopisRep.findById(id);
 		Casopis casopis = casopisOpt.get();
-		String formattedDate = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		Porudzbina porudzbina = new Porudzbina(casopis.getMerchantId(), casopis.getMerchantPassword(), casopis.getCena(), formattedDate, casopis.getValuta());
+		Date date = new Date();
+		Porudzbina porudzbina = new Porudzbina(casopis.getMerchantId(), casopis.getMerchantPassword(), casopis.getCena(), date, casopis.getValuta());
 		porudzbinaRep.save(porudzbina);
 		return porudzbina;
 	}
