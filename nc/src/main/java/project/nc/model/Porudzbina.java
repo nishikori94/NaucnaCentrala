@@ -31,7 +31,6 @@ public class Porudzbina {
 
 	public Porudzbina() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Porudzbina(String merchantId, String merchantPassword, String amount, Date merchantTimestamp,

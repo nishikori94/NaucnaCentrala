@@ -36,7 +36,7 @@ public class CasopisController {
 	@GetMapping("/sacuvajPorudzbinu/{id}")
 	public String sacuvajPorudzbinu(@PathVariable("id") Long id) {
 		Porudzbina porudzbina = ps.sacuvajPorudzbinu(id);
-		final String putanja = "https://localhost:9091/placanje/sacuvajPorudzbinu";
+		final String putanja = "https://localhost:9091/porudzbina/sacuvajPorudzbinu";
 		String url = restTemplate.postForObject(putanja, porudzbina, String.class);
 		return "{\"url\":\""+ url + "\"}";
 	}

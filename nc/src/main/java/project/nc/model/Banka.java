@@ -39,7 +39,6 @@ public class Banka {
 
 	public Banka() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Banka(String swiftKod, String naziv, String port, List<Racun> racuni) {

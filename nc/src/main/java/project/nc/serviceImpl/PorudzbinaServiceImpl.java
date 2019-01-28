@@ -23,7 +23,6 @@ public class PorudzbinaServiceImpl implements PorudzbinaService {
 	
 	@Override
 	public Porudzbina sacuvajPorudzbinu(Long id) {
-		// TODO Auto-generated method stub
 		Optional<Casopis> casopisOpt = casopisRep.findById(id);
 		Casopis casopis = casopisOpt.get();
 		Date date = new Date();

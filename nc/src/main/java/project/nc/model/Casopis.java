@@ -46,7 +46,6 @@ public class Casopis implements Serializable {
 
 	public Casopis() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Casopis(String naziv, String merchantId, String merchantPassword, String cena, String valuta) {
