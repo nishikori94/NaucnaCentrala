@@ -1,11 +1,15 @@
 package project.nc.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Porudzbina {
@@ -28,6 +32,14 @@ public class Porudzbina {
 
 	@Column
 	private Date merchantTimestamp;
+	
+	@ManyToMany(mappedBy = "porudzbine")
+    @JsonIgnore
+    private List<Casopis> casopisi;
+	
+	@ManyToMany(mappedBy = "porudzbine")
+    @JsonIgnore
+    private List<Rad> radovi;
 
 	public Porudzbina() {
 		super();

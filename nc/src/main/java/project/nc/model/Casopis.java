@@ -1,6 +1,7 @@
 package project.nc.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,7 +10,11 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -40,9 +45,18 @@ public class Casopis implements Serializable {
 	@Column
 	private String valuta;
 
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "casopis", cascade = CascadeType.ALL)
+	@JsonIgnore
+	public List<Rad> radovi;
+	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "casopis")
 	@JsonIgnore
 	public Racun racun;
+	
+	@ManyToMany(targetEntity=Porudzbina.class)
+	@JoinTable(name = "porudzbine_casopisa", joinColumns = @JoinColumn(name = "casopis_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "porudzbina_id", referencedColumnName = "merchantOrderId"))
+	@JsonIgnore
+	public List<Porudzbina> porudzbine;
 
 	public Casopis() {
 		super();

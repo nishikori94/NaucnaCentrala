@@ -26,10 +26,10 @@ public class CasopisController {
 	private RestTemplate restTemplate;
 	
 	@Autowired
-	PorudzbinaService ps;
+	private PorudzbinaService ps;
 	
 	@Autowired
-	CasopisRepository casopisRep;
+	private CasopisRepository casopisRep;
 
 	// sacuvaj porudzbinu za evidenciju, prosledi u KP da i on sacuva i vrati link
 	// ka KP frontu
