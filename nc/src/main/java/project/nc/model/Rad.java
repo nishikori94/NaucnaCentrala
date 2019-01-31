@@ -32,12 +32,12 @@ public class Rad {
 
 	@ManyToOne
 	public Casopis casopis;
-	
-	@ManyToMany(targetEntity=Porudzbina.class)
+
+	@ManyToMany(targetEntity = Porudzbina.class)
 	@JoinTable(name = "porudzbine_radova", joinColumns = @JoinColumn(name = "rad_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "porudzbina_id", referencedColumnName = "merchantOrderId"))
 	@JsonIgnore
 	public List<Porudzbina> porudzbine;
-	
+
 	public Rad() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -81,6 +81,14 @@ public class Rad {
 
 	public void setCena(String cena) {
 		this.cena = cena;
+	}
+
+	public Casopis getCasopis() {
+		return casopis;
+	}
+
+	public void setCasopis(Casopis casopis) {
+		this.casopis = casopis;
 	}
 
 }

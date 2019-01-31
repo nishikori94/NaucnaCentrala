@@ -6,4 +6,6 @@ public interface PorudzbinaService {
 
 	Porudzbina sacuvajPorudzbinu(Long id);
 
+	Porudzbina sacuvajPorudzbinuRada(Long id);
+
 }
